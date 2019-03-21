@@ -1,2 +1,23 @@
 @import "./reset";
 @import "variable";
+@import "font-awesome";
+a{
+  text-decoration: none;
+}
+ /*------index_sidebar_up----------------------------*/
+
+@include index_side_up();
+
+ /*------index_sidebar_up----------------------------*/
+@include index_side_down();
+
+ /*------main_header----------------------------*/
+@include main_header();
+
+
+
+
+
+/*
+ *= require font-awesome
+ */

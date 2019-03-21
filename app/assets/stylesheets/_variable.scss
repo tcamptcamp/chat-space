@@ -1,1 +1,146 @@
-#変数定義用　色など
+
+
+// ------index_sidebar_up----------------------------
+@mixin index_side_up($color: #fff) {
+.index_sidebar {
+  width: 300px;
+  height: 100vh;
+  display: inline-block;
+.index_sidebar_up {
+  height: 100px;
+  background-color: #253141;
+  color: $color;
+  padding: 0 20px;
+  font-weight: bold;
+  font-size: 16px;
+  line-height: 100px;
+  p{
+    float: left;
+  }
+  a{
+    float: right;
+    color: white;
+    padding-right: 10px;
+  }
+}
+  }
+}
+
+
+// ------index_sidebar_down----------------------------
+@mixin index_side_down ($color: #fff){
+.index_sidebar-down{
+  height: calc(100vh - 100px);
+  background-color: #2f3e51;
+  padding: 0 20px;
+  .group_name{
+   font-weight: bold;
+   font-size: 15px;
+   color: $color;
+   padding: 20px 0 5px;
+  }
+  .message{
+   font-weight: bold;
+   font-size: 11px;
+   color: #FFFFFF;
+   padding-bottom: 40px;
+  }
+}
+}
+
+
+// ------main_header----------------------------
+@mixin main_header {
+.main_header{
+    width: calc(100vw - 300px);
+    height: 100px;
+    float: right;
+    border-bottom: 1px solid #eeeeee;
+
+  .header_left{
+    float: left;
+    padding-left: 40px;
+  }
+
+  .main_group{
+    padding: 35px 0 15px;
+    display: inline-block;
+    font-size: 20px;
+  }
+  .main_member{
+    font-size: 12px;
+    color: #999999;
+  }
+
+
+  .header_right {
+    float: right;
+    padding-right: 40px;
+   a{
+        margin-top: 28px;
+    display: inline-block;
+    border: 1px solid blue;
+    color: blue;
+    padding: 0 20px;
+    height: 40px;
+    line-height: 40px;
+   }
+ }
+}
+}
+
+// ------Message----------------------------
+
+  .index_message{
+  width: calc(100vw - 300px);
+  height: calc(100vh - 190px);
+  background-color: #fafafa;
+  float: right;
+
+.messages{
+  padding: 46px 0 0 40px;
+}
+}
+.user_name{
+  padding-bottom: 10px;
+      color: #434a54;
+    font-size: 16px;
+    font-weight: bold;
+  }
+    .users_message{
+      color: #434a54;
+    font-size: 14px;
+    margin-bottom: 10px;
+    }
+
+
+
+// ------index_form----------------------------
+.form{
+  height: 90px;
+  padding: 20px 40px;
+  background-color: #ddd;
+  float: left;
+  margin-top: -124px;
+  margin-left: 300px;
+}
+
+ input {
+   height: 50px;
+   padding-left: 10px;
+  width: calc(100vw - 380px);
+}
+
+#file_button {display: none;}
+
+
+.submit_btn{
+    width: 100px;
+    padding: 0 10px;
+    margin-left: 15px;
+    background-color: #38aef0;
+    color: white;
+    cursor: pointer;
+ }
+
+
