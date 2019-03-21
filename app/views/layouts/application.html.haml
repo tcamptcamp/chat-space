@@ -9,14 +9,4 @@
   %body
     = yield
 
-<script>
-$(document).on('click', '#select_file_button', function() {
-  $("#file_button").click();
- })
-</script>
 
-<script>
-$(document).on('change', '#file_button', function() {
-  $('#filename').val($(this).val().replace(/^.*\\/, ""));
- })
-</script>
