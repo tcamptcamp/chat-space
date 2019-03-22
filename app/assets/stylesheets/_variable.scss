@@ -1,0 +1,133 @@
+
+
+// ------index_sidebar_up----------------------------
+@mixin index__side($color: #fff) {
+.sidebar {
+  width: 300px;
+  height: 100vh;
+  float: left;
+
+   &__up {
+    height: 100px;
+    background-color: #253141;
+    color: $color;
+    padding: 0 20px;
+    font-weight: bold;
+    font-size: 16px;
+    line-height: 100px;
+      p{
+       display: inline-block;
+      }
+      a{
+       float: right;
+       color: $color;
+       padding-right: 10px;
+      }
+    }
+  &__down {
+  padding: 0 20px;
+   &__name{
+    padding: 20px 0 5px 0;
+    }
+   &__message{
+    padding-bottom: 40px;
+    }
+   }
+  }
+ }
+
+
+// ------main_header----------------------------
+
+@mixin main_header {
+.main{
+     width: calc(100vw - 300px);
+     height: calc(100vh - 190px);
+     float: left;
+    &__up{
+       border-bottom: 1px solid #eeeeee;
+       height: 100px;
+       padding:  0 40px;
+     }
+     &__left{
+       float: left;
+       padding-top: 35px;
+     }
+
+     &__right {
+       float: right;
+       border: 1px solid orange;
+       margin-top: 28px;
+     }
+
+     a{
+      padding: 20px 20px;
+      line-height: 40px;
+      color: orange;
+      }
+     }
+
+}
+
+// ------Message----------------------------
+@mixin main_message{
+.main_message{
+     width: calc(100vw - 300px);
+     height: calc(100vh - 190px);
+     background-color: #fafafa;
+     padding: 46px 40px 0;
+
+     }
+.main__user__message{
+      padding: 10px 0 40px 0;
+      }
+ }
+
+// ------index_form----------------------------
+@mixin index_form{
+  .form{
+     width: calc(100vw - 300px);
+     background-color: #ddd;
+     height: 90px;
+     float: left;
+     margin-top: 100px;
+     padding-top: 23px;
+
+  }
+  form{
+    display: flex;
+   padding: 0 40px;
+   position: relative;
+  }
+  .textarea{
+    height: 50px;
+    padding: 0 40px 0 10px;
+    color: #434a54;
+    border-style: none;
+    width: 100%;
+  }
+
+.fa-image{
+  font-size: 25px;
+  position: absolute;
+  top: 13px;
+  right: 190px;
+
+}
+
+.none_file{
+ display: none;
+}
+
+  .btn{
+        width: 100px;
+    height: 50px;
+    padding: 0 30px;
+    margin-left: 15px;
+    background-color: #38aef0;
+    color: white;
+    cursor: pointer;
+  }
+}
+
+

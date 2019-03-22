@@ -1,0 +1,26 @@
+@import "./reset";
+@import "variable";
+@import "font-awesome";
+
+*{
+  box-sizing: border-box
+}
+a{
+  text-decoration: none;
+}
+ /*------index_sidebar_up----------------------------*/
+@include index__side();
+
+ /*------main_header----------------------------*/
+@include main_header();
+
+/*------main_message----------------------------*/
+@include main_message();
+
+/*------index_form----------------------------*/
+@include index_form();
+
+
+/*
+ *= require font-awesome
+ */
