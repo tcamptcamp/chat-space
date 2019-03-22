@@ -1,13 +1,13 @@
 / ---main------------------------------
-.main_header
-  .header_left
-    %p.main_group group_name
-    %p.main_member member
-  .header_right
-    %a{:href => "#"} Edit
+.main
+  .main__up
+    .main__left
+      %p.main_group group_name
+      %p.main_member member
+    .main__right
+      %a{:href => "#"} Edit
   / ---message------------------------------
-  .index_message
-    .messages
-      %p.user_name User_name
-      %p.users_message message
-.clear
+  .main_message
+    .main__messages
+      %p.main__name User_name
+      %p.main__user__message message

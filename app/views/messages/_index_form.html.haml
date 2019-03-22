@@ -1,6 +1,8 @@
 / ---form------------------------------
 .form
-  %form{"accept-charset" => "UTF-8", :action => "", :method => "post"}
-    %input{:name => "name", :placeholder => "type a message", :size => "40", :type => "text"}/
-    %i.fa.fa-image
-    %input.submit_btn{:type => "submit", :value => "Send"}/
+  %form
+    %input.textarea{:name => "", :placeholder => "type a message", :type => "text"}/
+    %label.image_icon
+      %i.fa.fa-image
+      %input.none_file{:name => "", :type => "file"}/
+      %input.btn{:type => "submit", :value => "Send"}/
