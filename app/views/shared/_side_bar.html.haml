@@ -1,20 +1,8 @@
-/ --- sidebar------------------------------
-/ .sidebar
-/   .sidebar__up
-/     %h3.header__name
-/       = current_user.name
-/     %a{href: "#"}= fa_icon "cog"
-/     %a{href: "#"}= fa_icon "edit"
-/   .sidebar__down
-/     %p.sidebar__down__name group_name
-/     %p.sidebar__down__message message
-
 / ユーザー編集ページに遷移するためのパスを追加
-/ ユーザー名を表示させるためビューファイルを変更
 .side-bar
   .header
     %h3.header__name
-      = current_user.name
+       = current_user.name
     %ul.header__lists
       %li.list
         = link_to do
@@ -38,5 +26,3 @@
         グループ名
       .group__message
         新着メッセージ
-
-
