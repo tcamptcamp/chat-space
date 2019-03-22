@@ -7,3 +7,35 @@
   .sidebar__down
     %p.sidebar__down__name group_name
     %p.sidebar__down__message message
+
+/ ユーザー編集ページに遷移するためのパスを追加
+/ ユーザー名を表示させるためビューファイルを変更
+/ .side-bar
+/   .header
+/     %h3.header__name
+/       = current_user.name
+/     %ul.header__lists
+/       %li.list
+/         = link_to do
+/           = fa_icon 'pencil-square-o', class: 'icon'
+/       %li.list
+/         = link_to edit_user_path(current_user) do
+/           = fa_icon 'cog', class: 'icon'
+/   .groups
+/     .group
+/       .group__name
+/         グループ名
+/       .group__message
+/         新着メッセージ
+/     .group
+/       .group__name
+/         グループ名
+/       .group__message
+/         新着メッセージ
+/     .group
+/       .group__name
+/         グループ名
+/       .group__message
+/         新着メッセージ
+
+
