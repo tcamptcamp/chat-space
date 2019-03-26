@@ -1,27 +1,26 @@
-@import "./reset";
-@import "variable";
-@import "modules/user";
-@import "modules/group";
 @import "font-awesome";
+
 @import "config/colors";
-@import "modules/flash";
-*{
-  box-sizing: border-box;
-}
-a{
-  text-decoration: none;
-}
- /*------index_sidebar_up----------------------------*/
-@include index__side();
+@import "config/font-size";
+@import "config/reset";
+@import "mixins/mixin";
+@import "mixins/vendor_prefix";
+@import "modules/side_bar";
+@import "modules/chat";
+@import "messages/messages.scss";
 
- /*------main_header----------------------------*/
-@include main_header();
 
-/*------main_message----------------------------*/
-@include main_message();
+/*------index_sidebar_up----------------------------*/
+// @include index__side();
 
-/*------index_form----------------------------*/
-@include index_form();
+//  /*------main_header----------------------------*/
+// @include main_header();
+
+// /*------main_message----------------------------*/
+// @include main_message();
+
+// /*------index_form----------------------------*/
+// @include index_form();
 
 
 /*
