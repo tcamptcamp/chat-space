@@ -42,12 +42,12 @@ $(function(){
    .done(function(data){
       var html = buildHTML(data);
       $('.messages').append(html);
-      $('.form__message').val('');
+
 
       $('.messages').animate({scrollTop: $('.messages')[0].scrollHeight}, 'fast');
       $('#new_message').prop('disabled', false);
       $(".form__submit").removeAttr("disabled");
-      $('.hidden').val('');
+      $('.new_message')[0].reset();
     })
 
 
