@@ -1,36 +1,32 @@
 
-= form_for @group do |f|
-  .chat-group-form__field.clearfix
+= form_for group do |f|
+  - if group.errors.any?
+    .chat-group-form__errors
+      %h2= "#{group.errors.full_messages.count}件のエラーが発生しました。"
+      %ul
+        - group.errors.full_messages.each do |message|
+          %li= message
+  .chat-group-form__field
     .chat-group-form__field--left
-      = f.label 'グループ名', class: 'chat-group-form__label'
+      = f.label :name, class: 'chat-group-form__label'
     .chat-group-form__field--right
-      = f.text_field :name, class: 'chat-group-form__input', placeholder: 'グループ名を入力してください'
-
+      = f.text_field :name, class: 'chat__group_name chat-group-form__input', placeholder: 'グループ名を入力してください'
   .chat-group-form__field.clearfix
     .chat-group-form__field--left
-      = f.label "チャットメンバーを追加", class: "chat-group-form__label", for: "user-search-field"
+      = f.label :name, 'チャットメンバーを追加', class:'chat-group-form__label'
     .chat-group-form__field--right
       .chat-group-form__search.clearfix
-        %input#user-search-field.chat-group-form__input{placeholder: "追加したいユーザー名を入力してください", type: "text", autocomplete: "off"}
-        %ul#user-search-result
-
+        %input#user-search-field.chat-group-form__input{:placeholder => "追加したいユーザー名を入力してください", :type => "text"}/
+      #user-search-result
   .chat-group-form__field.clearfix
     .chat-group-form__field--left
-      = f.label 'チャットメンバー', class: 'chat-group-form__label'
-    .chat-group-form__field--right
-      %ul#chat-group-members
-        %li.chat-group-member.clearfix
-          %p.chat-group-member__name
-            = current_user.name
-        - if @member.nil?
-          / = render partial: 'user', collection: @members
-      %input{type: "hidden", name: "group[user_ids][]", value: current_user.id}
-
-
+      = f.label :name, 'チャットメンバー', class:'chat-group-form__label'
+    #chat-group-users
+      #chat-group-user-.chat-group-user.clearfix
+        %input{ name: "group[user_ids][]", type: "hidden", value: "#{current_user.id}"}
+        %p.chat-group-user__name
+          = current_user.name
   .chat-group-form__field.clearfix
     .chat-group-form__field--left
     .chat-group-form__field--right
-      = f.submit 'Save', class: 'chat-group-form__action-btn'
-
-= javascript_tag do
-  users = #{raw @users.to_json};
+      = f.submit class: 'chat-group-form__action-btn'
