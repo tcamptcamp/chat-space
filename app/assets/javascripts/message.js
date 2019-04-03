@@ -6,8 +6,10 @@ $(function(){
     image = (message.image) ? `<img src="${ message.image }">`: " ";
 
 
-    var html = `<div class="message">
+    var html = `<div class="message" data-id = ${message.id} >
+
                   <div class="upper-message">
+
                    <div class="upper-message__user-name">
                        ${message.name}
                    </div>
@@ -56,4 +58,33 @@ $(function(){
       $('.form__submit').prop('disabled', false);
     });
    });
-  });
+
+
+
+    // 自動更新
+    var interval = setInterval(function() {
+      if (location.href.match(/\/groups\/\d+\/messages/)){
+        var message_id = $('.message:last').data('id');
+
+        $.ajax({
+          url: location.href,
+          type: "GET",
+          data: {id: message_id},
+          dataType: "json"
+        })
+        .done(function(data) {
+          data.forEach(function(message) {
+            var html = buildHTML(message);
+            $('.messages').append(html);
+            $('.messages').animate({scrollTop:$('.messages')[0].scrollHeight});
+            $('.new_message .message').val('');
+          })
+        })
+        .fail(function() {
+          alert('自動更新に失敗しました');
+        });
+      } else {
+          clearInterval(interval);
+        }
+    } , 2000 );
+});

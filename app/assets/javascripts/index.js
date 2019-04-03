@@ -11,7 +11,8 @@ $(function(){
         </a>
       </div>`
     $("#user-search-result").append(html);
-  };
+  }
+
 
   function appendNoUser(user){
     var html =
