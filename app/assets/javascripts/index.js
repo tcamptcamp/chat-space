@@ -13,6 +13,7 @@ $(function(){
     $("#user-search-result").append(html);
   }
 
+
   function appendNoUser(user){
     var html =
       `<div class="chat-group-user clearfix">
