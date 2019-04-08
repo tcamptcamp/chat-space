@@ -1,9 +1,8 @@
-# config valid for current version and patch releases of Capistrano
-lock "~> 3.10.2"
-
+# config valid only for current version of Capistrano
+lock 'capistrano (3.10.2)'
 
 set :application, 'chat-space'
-set :repo_url,  'git@github.com:tcamptcamp/chat-space.git'
+set :repo_url,  'git@github.com:tcamp/chat-space.git'
 
 set :linked_dirs, fetch(:linked_dirs, []).push('log', 'tmp/pids', 'tmp/cache', 'tmp/sockets', 'vendor/bundle', 'public/system', 'public/uploads')
 
@@ -22,4 +21,4 @@ namespace :deploy do
   task :restart do
     invoke 'unicorn:restart'
   end
-end :secure
+end
